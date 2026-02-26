@@ -1,0 +1,51 @@
+{
+  // ==========================================================================
+  // Claude DataScience DevContainer — VS Code Settings
+  // ==========================================================================
+
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.rulers": [120],
+
+  // Python
+  "python.defaultInterpreterPath": "~/miniconda3/envs/ds/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+
+  // Jupyter
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.output.textLineLimit": 50,
+
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/__pycache__": true,
+    "**/.ipynb_checkpoints": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/__pycache__": true,
+    "**/.ipynb_checkpoints": true,
+    "**/data/raw": true,
+    "**/data/processed": true
+  },
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/__pycache__/**": true,
+    "**/.ipynb_checkpoints/**": true
+  }
+}
