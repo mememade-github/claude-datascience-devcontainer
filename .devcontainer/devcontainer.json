@@ -46,7 +46,15 @@
         "files.watcherExclude": {
           "**/.git/objects/**": true,
           "**/node_modules/**": true
-        }
+        },
+        "python.defaultInterpreterPath": "/home/vscode/miniconda3/envs/ds/bin/python",
+        "python.condaPath": "/home/vscode/miniconda3/bin/conda",
+        "jupyter.kernels.filter": [
+          {
+            "path": "/home/vscode/miniconda3/envs/ds/bin/python",
+            "preferred": true
+          }
+        ]
       },
       "extensions": [
         "dbaeumer.vscode-eslint",
