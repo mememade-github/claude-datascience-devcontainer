@@ -121,6 +121,26 @@ Project:        nvm project-node (선택)
 
 ## CLI 환경 구성
 
+### Docker 컨테이너
+
+```bash
+# 빌드
+cd .devcontainer && docker compose build
+
+# 캐시 없이 재빌드 (~8-10분)
+cd .devcontainer && docker compose build --no-cache
+
+# 시작 / 정지 / 상태
+cd .devcontainer && docker compose up -d
+cd .devcontainer && docker compose down
+cd .devcontainer && docker compose ps
+
+# 로그
+cd .devcontainer && docker compose logs -f
+```
+
+### Data Science 환경
+
 ```bash
 # conda 환경 활성화 (터미널 시작 시 자동, 수동 필요 시)
 conda activate ds
