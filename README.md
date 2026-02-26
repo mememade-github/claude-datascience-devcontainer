@@ -119,6 +119,28 @@ Project:        nvm project-node (선택)
 
 변경: `.devcontainer/.env`의 `PORT_*` 수정 + `devcontainer.json`의 `forwardPorts` 동기화 → 컨테이너 재빌드.
 
+## CLI 환경 구성
+
+```bash
+# conda 환경 활성화 (터미널 시작 시 자동, 수동 필요 시)
+conda activate ds
+
+# Python / PyTorch 확인
+python --version
+python -c "import torch; print(torch.__version__)"
+
+# Jupyter kernel 확인
+python -m jupyter kernelspec list
+
+# 패키지 추가 설치
+conda install -n ds -y <package>
+pip install <package>                    # conda에 없는 경우
+
+# 환경 검증
+bash .devcontainer/verify-template.sh    # 전체 검증
+bash .claude/hooks/test-hooks.sh         # Hook 검증
+```
+
 ## Troubleshooting
 
 | 문제 | 해결 |
