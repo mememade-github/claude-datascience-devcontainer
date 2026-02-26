@@ -25,21 +25,30 @@ git clone <repo-url> my-ds-project
 2. `Ctrl+Shift+P` → **Dev Containers: Reopen in Container**
 3. 첫 빌드 ~8-10분 (DS 패키지 포함)
 
-### 3. 사용
+### 3. Claude Code 실행
 
 ```bash
-# 터미널에서 Claude Code
-claude
+# 새 세션 시작 (권한 프롬프트 없이 자동 승인)
+claude --dangerously-skip-permissions
 
-# Jupyter 노트북
-# → .ipynb 파일 생성 → 커널 "Python (ds)" 선택 (VS Code가 자동 인식)
+# 이전 세션 이어서 작업
+claude --dangerously-skip-permissions --continue
+```
 
-# 또는 JupyterLab (브라우저)
+> `--dangerously-skip-permissions`: 파일 수정, 명령 실행 등 모든 도구를 승인 없이 허용합니다.
+> `--continue`: 마지막 대화 컨텍스트를 이어받아 계속합니다.
+
+### 4. Jupyter 사용
+
+```bash
+# VS Code에서: .ipynb 파일 생성 → 커널 "Python (ds)" 선택 (자동 인식, 별도 실행 불필요)
+
+# 브라우저에서 JupyterLab 사용 시:
 conda activate ds
 jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
 ```
 
-### 4. 저장
+### 5. 저장
 
 ```bash
 git add -A && git commit -m "chore: initialize ds project"
