@@ -11,7 +11,7 @@
       "program": "${file}",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "python": "~/miniconda3/envs/ds/bin/python"
+      "python": "/home/vscode/miniconda3/envs/ds/bin/python"
     },
     {
       "name": "Python: 모듈",
@@ -20,7 +20,7 @@
       "module": "${command:pickModule}",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
-      "python": "~/miniconda3/envs/ds/bin/python"
+      "python": "/home/vscode/miniconda3/envs/ds/bin/python"
     },
     {
       "name": "Node.js: 현재 파일",
