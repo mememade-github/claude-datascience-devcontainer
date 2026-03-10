@@ -17,20 +17,20 @@
 | `CLAUDE_NODE_VERSION` | `20` | Dockerfile ARG | Claude Code Node.js |
 | `PROJECT_NODE_VERSION` | *(empty)* | Dockerfile ARG | 프로젝트 Node.js |
 | `CONDA_PYTHON_VERSION` | `3.12` | Dockerfile ARG | DS Python 버전 |
-| `PORT_APP` | `3000` | docker-compose.yml ports | 앱 포트 |
-| `PORT_API` | `8080` | docker-compose.yml ports | API 포트 |
-| `PORT_DB` | `5432` | docker-compose.yml ports | DB 포트 |
-| `PORT_EXTRA` | `8888` | docker-compose.yml ports | JupyterLab 포트 |
+| `PORT_APP` | `32000` | docker-compose.yml ports | 앱 포트 |
+| `PORT_API` | `32080` | docker-compose.yml ports | API 포트 |
+| `PORT_DB` | `32432` | docker-compose.yml ports | DB 포트 |
+| `PORT_EXTRA` | `32888` | docker-compose.yml ports | JupyterLab 포트 |
 | `HOST_WORKSPACE_PATH` | *(empty)* | docker-compose.yml volumes | 워크스페이스 경로 |
 
 ## Ports
 
 | 변수 | 기본값 | devcontainer.json | 용도 |
 |------|--------|------------------|------|
-| `PORT_APP` | 3000 | forwardPorts[0] | 앱, dev server |
-| `PORT_API` | 8080 | forwardPorts[1] | API 서버 |
-| `PORT_DB` | 5432 | forwardPorts[2] | 데이터베이스 |
-| `PORT_EXTRA` | 8888 | forwardPorts[3] | JupyterLab |
+| `PORT_APP` | 32000 | forwardPorts[0] | 앱, dev server |
+| `PORT_API` | 32080 | forwardPorts[1] | API 서버 |
+| `PORT_DB` | 32432 | forwardPorts[2] | 데이터베이스 |
+| `PORT_EXTRA` | 32888 | forwardPorts[3] | JupyterLab |
 
 **주의**: `.env` 포트 변경 시 `devcontainer.json`의 `forwardPorts`도 함께 수정해야 합니다.
 
