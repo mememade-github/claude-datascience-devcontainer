@@ -38,7 +38,42 @@ claude --dangerously-skip-permissions --continue
 > `--dangerously-skip-permissions`: 파일 수정, 명령 실행 등 모든 도구를 승인 없이 허용합니다.
 > `--continue`: 마지막 대화 컨텍스트를 이어받아 계속합니다.
 
-### 4. Jupyter 사용
+### 4. 프로젝트 초기 설정
+
+Claude 프롬프트에 아래 전체를 붙여넣기:
+
+```
+프로젝트 초기 설정을 수행해 주세요.
+
+## 수집할 정보 (대화형으로 질문)
+- 프로젝트명, 설명, GitHub URL
+- 분석 도메인 (예: NLP, Computer Vision, 시계열, 추천)
+- 추가 패키지 (기본 DS 패키지 외)
+- 포트 매핑 (기본: APP=3000, API=8080, DB=5432, EXTRA=8888)
+- 데이터 소스 (DB, API, 파일 등)
+- 서버 정보 (있으면)
+
+## 수행할 작업
+1. 추가 conda 패키지 설치
+2. .serena/project.yml — languages 배열에 프로젝트 언어 추가
+3. CLAUDE.md — Identity 섹션 업데이트
+4. PROJECT.md — 프로젝트에 맞게 재작성
+5. REFERENCE.md — 프로젝트별 명령어 업데이트
+6. .devcontainer/.env — 포트, 타임존 설정
+7. .devcontainer/devcontainer.json — forwardPorts 동기화
+8. .claude/rules/project/ — 프로젝트 코딩 규칙 생성
+
+## 검증
+- bash .devcontainer/verify-template.sh
+- bash .claude/hooks/test-hooks.sh
+
+## 주의
+- .claude/settings.json, Dockerfile, 에이전트 frontmatter는 수정 금지
+
+질문부터 시작해 주세요.
+```
+
+### 5. Jupyter 사용
 
 ```bash
 # VS Code에서: .ipynb 파일 생성 → 커널 "Python (ds)" 선택 (자동 인식, 별도 실행 불필요)
@@ -48,7 +83,7 @@ conda activate ds
 jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
 ```
 
-### 5. 저장
+### 6. 저장
 
 ```bash
 git add -A && git commit -m "chore: initialize ds project"
@@ -108,7 +143,9 @@ Data Science:   Miniconda Python 3.12 (conda env: ds)
 Project:        nvm project-node (선택)
 ```
 
-## 포트
+## 포트 (컨테이너 내부)
+
+> 호스트 매핑 포트는 `.devcontainer/.env`의 `PORT_*`로 설정. 상세: [REFERENCE.md](REFERENCE.md#ports)
 
 | 변수 | 기본값 | 용도 |
 |------|--------|------|
